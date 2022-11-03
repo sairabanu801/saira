@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <title>Place an Order - Love that Ink Pen Company</title>
+    <script>
+        // values
+        function calculateTotal(){
+        var name = document.getElementById('cusName').value;
+        var deliverydate = document.getElementById('delDate').value;
+        var numItems = parseInt(document.getElementById('numItems').value); 
+
+        // calculations
+        var price = numItems * 4.25;
+        var tax = price * 0.07;
+        var shipping = price * 0.02;
+        var totalCost = price + tax + shipping;
+
+        // Output text
+        var text = 'Thank you ' + name + 'for you order.<br/>';
+        text += 'You will receive ' + numItems + ' items delivered to you on ' + deliverydate + '.<br/>';
+                text += 'You price of your items is $' + price.toFixed(2) + '.<br/>';
+            text += 'The tax charge is $' + tax.toFixed(2) + '.<br/>';
+                text += 'The shipping charge is $' + shipping.toFixed(2) + '.<br/>';
+            text += 'Your total is $' + totalCost.toFixed(2) + '.<br\>';;
+
+        // Results
+        document.write('<h2>' + text + '</h2>');;
+        } 
+      
+      </script>  
+</head>
+<body>
+
+    <div style="text-align: left; background-color:Orange; color:Black; 16px;">
+        <h1>Place an Order</h1>
+      
+         <label>Customer Name:</label>
+             <input type="text" id="cusName"><br>
+
+         <label>Delivery Date:</label>
+         <input type="text" id="delDate"><br>
+
+         <label>Number Items:</label>
+         <input type="text" id="numItems"><br>
+    </div>  
+
+    <div style="text-align: left; background-color:Green; color:Black; 16px;">
+         <input type="submit" id="btnSubmit" value="Submit" onclick="calculateTotal(); return false;" />
+    </div>
+
+    
+
+    <div style="background-color:Orange; color:Black; 16px;">
+        <h2>
+            Visit our <a href="https://www.pens.com/" target="_blank">External Website</a>
+        </h2>
+
+        <h2>
+            <a href="week1-1.html">Link</a> to our main page.
+        </h2>
+    </div>
+</body>
+</html>
